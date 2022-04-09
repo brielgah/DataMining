@@ -1,0 +1,16 @@
+INSERT INTO catalogoSensores VALUES ('LOM','Lomas','Miguel Hidalgo ','CDMX');
+INSERT INTO catalogoSensores VALUES ('TEC','Cerro del Tepeyac','Gustavo A. Madero','CDMX');
+INSERT INTO catalogoSensores VALUES ('DIC','Diconsa','Tlalpan','CDMX');
+INSERT INTO catalogoSensores VALUES ('MCM','Museo de la Ciudad de México','Cuauhtémoc','CDMX');
+INSERT INTO catalogoSensores VALUES ('TLA','Tlalnepantla','Tlalnepantla de Baz','Edo Mex');
+INSERT INTO catalogoSensores VALUES ('XAL','Xalostoc','Ecatepec de Morelos','Edo Mex');
+INSERT INTO catalogoSensores VALUES ('EDL','Ex Convento Desierto de los Leones','Cuajimalpa de Morelos','CDMX');
+INSERT INTO catalogoSensores VALUES ('IBM','Legaria','Miguel Hidalgo','CDMX');
+INSERT INTO catalogoSensores VALUES ('NEZ','Nezahualcóyotl','Nezahualcóyotl','Edo Mex');
+INSERT INTO catalogoSensores VALUES ('MON','Montecillo','Texcoco','Edo Mex');
+INSERT INTO catalogoSensores VALUES ('EAJ','Ecoguardas Ajusco','Tlalpan','CDMX');
+INSERT INTO catalogoSensores VALUES ('AJU','Ajusco','Tlalpan','CDMX');
+INSERT INTO catalogoSensores VALUES ('MPA','Milpa Alta','Milpa Alta','CDMX');
+INSERT INTO catalogoSensores VALUES ('SNT','San Nicolás Totolapan','La Magdalena Contreras','CDMX');
+INSERT INTO catalogoSensores VALUES ('COR','CORENA','Xochimilco','CDMX');
+INSERT INTO catalogoSensores VALUES ('LLA','Laboratorio de Análisis Ambiental','Gustavo A. Madero','CDMX');
