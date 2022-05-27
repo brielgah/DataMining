@@ -8,6 +8,8 @@
 
 + [ ] Limpieza de datos
 
++ [ ] Borrar clues DFSSA003966
+
 ### NA / Ninguno
 
 + [ ] Cambiar ```NA``` por ```desconocido``` de ``` edocivil_descripcion``` 1135

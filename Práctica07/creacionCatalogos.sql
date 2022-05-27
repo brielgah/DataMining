@@ -324,7 +324,6 @@ insert into CLUESHospital values('DFSSA004270');
 insert into CLUESHospital values('DFSSA003640');
 insert into CLUESHospital values('DFSSA000712');
 insert into CLUESHospital values('DFSSA003915');
-insert into CLUESHospital values('DFSSA003966');
 insert into CLUESHospital values('DFSSA002491');
 insert into CLUESHospital values('DFSSA017886');
 insert into CLUESHospital values('DFSSA002643');
@@ -354,3 +353,35 @@ insert into procedimientoCompleto values(3,'MISOPROSTOL + MIFEPRISTONA + MISOPRO
 insert into procedimientoCompleto values(3,'MEDICAMENTO');
 insert into procedimientoCompleto values(3,'MIFEPRISTONA');
 insert into procedimientoCompleto values(3,'MISOPROSTOL + MIFEPRISTONA');
+
+create table informacionCLUES (
+    id int not null,
+    alcaldia varchar(50) not null,
+    tipoEstablecimiento varchar(50) not null,
+    calle varchar(50) not null,
+    colonia varchar(50) not null,
+    cp varchar(5) not null,
+    latitud float not null,
+    longitud float not null,
+    operacion boolean not null,
+    primary key(id),
+    foreign key(id) references CLUESHospital(id)
+)
+
+insert into informacionCLUES values(1, 'GUSTAVO A. MADERO', 'HOSPITALIZACION', 'PLAN DE SAN LUIS', 'TICOMAN', '07330', 19.514526372666094, -99.13793561054263, 1)
+insert into informacionCLUES values(2, 'MILPA ALTA', 'HOSPITALIZACION', 'NUEVO LEON', 'VILLA MILPA ALTA', '12000', 19.200989767891347, -99.01110735727343, 1)
+insert into informacionCLUES values(3, 'AZCAPOTZALCO', 'HOSPITALIZACION', 'GUSTAVO J. ESQUINA VICTOR HERNANDEZ COVARRUBIAS', 'UNIDAD FRANCISCO VILLA', '02400', 19.4979131, -99.2030482, 1)
+insert into informacionCLUES values(4, 'CUAJIMALPA DE MORELOS', 'HOSPITALIZACION', '16 DE SEPTIEMBRE', 'CONTADERO', '06500', 19.3477, -99.3018, 0)
+insert into informacionCLUES values(5, 'XOCHIMILCO', 'HOSPITALIZACION', '16 DE SEPTIEMBRE Y CALZADA NATIVITAS', 'XALTOCAN', '16090', 19.25496591, -99.1045, 1)
+insert into informacionCLUES values(6, 'GUSTAVO A. MADERO', 'HOSPITALIZACION', 'EMILIANO ZAPATA', 'CUAUTEPEC BARRIO BAJO', '07200', 19.539723277509776, -99.14103979255742, 1)
+insert into informacionCLUES values(7, 'TLALPAN', 'HOSPITALIZACION', 'ENCINOS ENTRE HORTENCIA Y PINANONA', 'AMPLIACION MIGUEL HIDALGO 4A. SECCION', '14250', 19.27181239, -99.20748963, 1)
+insert into informacionCLUES values(8, 'VENUSTIANO CARRANZA', 'CONSULTA EXTERNA', 'ING. EDUARDO MOLINA ESQUINA PELUQUEROS', '20 DE NOVIEMBRE (LA MICHOACÁNA)', '15300', 19.4452, -99.1122, 1)
+insert into informacionCLUES values(9, 'VENUSTIANO CARRANZA', 'HOSPITALIZACION', 'ESTAÑO ESQUINA CONGRESO DE LA UNIÓN', 'FELIPE ANGELES', '15300', 19.480653814007628, -99.12413705961308, 1)
+insert into informacionCLUES values(10, 'IZTAPALAPA', 'CONSULTA EXTERNA', 'NUEVO LEON ESQUINA CAPUTITLA', 'MIGUEL DE LA MADRID', '09698', 19.3428, -99.05, 1)
+insert into informacionCLUES values(11, 'MIGUEL HIDALGO', 'CONSULTA EXTERNA', 'MARIANO ESCOBEDO', 'ANAHUAC', '11320', 19.4487, -99.1819, 1)
+insert into informacionCLUES values(12, 'CUAJIMALPA DE MORELOS', 'CONSULTA EXTERNA', 'CERRADA DE JUAREZ', 'CUAJIMALPA', '05000', 19.357	-99.2972, 1)
+insert into informacionCLUES values(13, 'VENUSTIANO CARRANZA', 'CONSULTA EXTERNA', 'ORIENTE 170 ESQUINA CUARTA CERRADA ORIENTE 168', 'MOCTEZUMA SEGUNDA SECCION', '15500', 19.4285, -99.0967, 1)
+insert into informacionCLUES values(14, 'TLAHUAC', 'HOSPITALIZACION', 'TLAHUAC CHALCO', 'LA HABANA', '13050', 19.26534605, -98.99756205, 1)
+insert into informacionCLUES values(15, 'ALVARO OBREGON', 'HOSPITALIZACION', 'PROLONGACION 5 DE MAYO', 'EXHACIENDA TARANGO', '01618', 19.3618836, -99.2240659, 1)
+insert into informacionCLUES values(16, 'TLAHUAC', 'CONSULTA EXTERNA', 'FIDELIO', 'MIGUEL HIDALGO', '13200', 19.2905, -99.0478, 1)
+insert into informacionCLUES values(17, 'LA MAGDALENA CONTRERAS', 'CONSULTA EXTERNA', 'OJO DE AGUA', 'HUAYATLA', '10360', 19.312301	-99.2601498, 1)
