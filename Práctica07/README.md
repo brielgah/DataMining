@@ -2,13 +2,11 @@
 
 ### To do
 
-+ [ ] Terminar de construir catálogo de las clues
++ [x] Terminar de construir catálogo de las clues
 
 + [ ] Realizar diagrama de BD
 
 + [ ] Limpieza de datos
-
-+ [ ] Borrar clues DFSSA003966
 
 ### NA / Ninguno
 
@@ -69,6 +67,8 @@
 + [ ] Cambiar ```NA``` por ```NO``` en ```consejeria``` 6175
 
 + [ ] Revisar ```NA``` ```c_fecha``` 31987
+
++ [ ] Borrar clues ```DFSSA003966``` 280
 
 ### Si / No
 
