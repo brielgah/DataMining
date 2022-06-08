@@ -1,14 +1,11 @@
-create table anio (
-    id int not null IDENTITY,
-    anio int not null,
-    PRIMARY KEY(id)
+CREATE TABLE fecha (
+    id INT NOT NULL IDENTITY,
+    fecha DATE NOT NULL,
+    anio INT NOT NULL,
+    mes INT NOT NULL,
+    dia INT NOT NULL
 );
 
-create table mes(
-    id int not null IDENTITY,
-    mes varchar(15) not null,
-    PRIMARY KEY(id)
-);
 
 CREATE TABLE edoCivil(
     id int not null IDENTITY,
