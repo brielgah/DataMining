@@ -1,3 +1,13 @@
+CREATE TABLE cantidades (
+    id INT NOT NULL IDENTITY,
+    cantidad INT NOT NULL
+);
+
+CREATE TABLE edades (
+    id INT NOT NULL IDENTITY,
+    edad INT NOT NULL
+);
+
 CREATE TABLE fecha (
     id INT NOT NULL IDENTITY,
     fecha DATE NOT NULL,
@@ -6,7 +16,6 @@ CREATE TABLE fecha (
     dia INT NOT NULL,
     dia_semana varchar(10) not
 );
-
 
 CREATE TABLE edoCivil(
     id int not null IDENTITY,
