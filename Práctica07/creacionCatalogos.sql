@@ -3,7 +3,8 @@ CREATE TABLE fecha (
     fecha DATE NOT NULL,
     anio INT NOT NULL,
     mes INT NOT NULL,
-    dia INT NOT NULL
+    dia INT NOT NULL,
+    dia_semana varchar(10) not
 );
 
 
