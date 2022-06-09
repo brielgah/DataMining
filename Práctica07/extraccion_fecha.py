@@ -153,8 +153,8 @@ anticonceptivos = {
     'VASECTOMIA' : 17,
     'CONDON + PASTILLA DE EMERGENCIA' : 18,
     'PASTILLA ANTICONCEPTIVA' : 19,
-    'INYECCION + LIGADURA DE TROMPAS' : 22,
-    'INYECCION' : 23
+    'INYECCION + LIGADURA DE TROMPAS' : 20,
+    'INYECCION' : 21
 }
 
 anticonceptivo_post = {
@@ -271,7 +271,7 @@ with open('datosNuevos2.csv', newline='') as File:
     reader = csv.reader(File)
     first = True
     cnt = 0
-    id_fecha = 2
+    id_fecha = 1
     id_edad = 1
     id_cantidades = 1
     id_municipios = 1
@@ -297,7 +297,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_fecha_tmp = id_fecha 
                 id_fecha = fechas[fecha]
             
-            fecha = id_fecha
+            fecha = fechas[fecha]
 
             edad = int(row[4])
             if edad not in edades:
@@ -310,7 +310,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_edad_tmp = id_edad
                 id_edad = edades[edad]
             
-            edad = id_edad
+            edad = edades[edad]
             
             menarca = int(float(row[12]))
             if menarca not in edades:
@@ -323,7 +323,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_edad_tmp = id_edad
                 id_edad = edades[menarca]
             
-            menarca = id_edad
+            menarca = edades[menarca]
             
             f_sexual = row[13]
             if f_sexual != 'NA':
@@ -341,7 +341,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_edad_tmp = id_edad
                 id_edad = edades[f_sexual]
             
-            f_sexual = id_edad
+            f_sexual = edades[f_sexual]
 
             n_hijos = row[14]
             if n_hijos != 'NA':
@@ -359,7 +359,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[n_hijos]
             
-            n_hijos = id_cantidades
+            n_hijos = cantidades[n_hijos]
 
             gesta = int(row[15])
             if gesta not in cantidades:
@@ -372,7 +372,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[gesta]
             
-            gesta = id_cantidades
+            gesta =  cantidades[gesta]
 
             n_aborto = int(row[16])
             if n_aborto not in cantidades:
@@ -385,7 +385,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[n_aborto]
             
-            n_aborto = id_cantidades
+            n_aborto = cantidades[n_aborto]
 
             n_partos = int(row[17])
             if n_partos not in cantidades:
@@ -398,7 +398,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[n_partos]
             
-            n_partos = id_cantidades
+            n_partos = cantidades[n_partos]
 
             n_cesarea = int(row[18])
             if n_cesarea not in cantidades:
@@ -411,7 +411,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[n_cesarea]
             
-            n_cesarea = id_cantidades
+            n_cesarea = cantidades[n_cesarea]
 
             nile = int(row[19])
             if nile not in cantidades:
@@ -424,7 +424,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[nile]
             
-            nile = id_cantidades
+            nile = cantidades[nile]
 
             c_num = int(row[23])
             if c_num not in cantidades:
@@ -437,7 +437,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[c_num]
             
-            c_num = id_cantidades
+            c_num = cantidades[c_num]
 
             sem_gesta = int(row[27])
             if sem_gesta not in cantidades:
@@ -450,7 +450,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[sem_gesta]
             
-            sem_gesta = id_cantidades
+            sem_gesta = cantidades[sem_gesta]
 
 
             
@@ -465,7 +465,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_municipios_tmp = id_municipios
                 id_municipios = municipios[municipio]
             
-            municipio = id_municipios
+            municipio = municipios[municipio]
 
             f_ingreso = fecha 
             edo_civil = estado_civil[row[3]]
@@ -486,7 +486,7 @@ with open('datosNuevos2.csv', newline='') as File:
             clues = cluesHospital[row[35]]
             procile = procedimiento_ILE[row[36]]
 
-            query = f"INSERT INTO hechos VALUES ({f_ingreso}, {edo_civil}, {edad}, {derecho_hab}, {nivel_edu}, {ocupa}, {relig}, {paren}, {entidad}, {municipio}, {menarca}, {f_sexual}, {gesta}, {n_aborto}, {n_partos}, {n_cesarea}, {consejeria}, {anticonceptivo}, {c_num}, {motivo}, {p_sem_gest}, {p_concent}, {complica}, {dolor}, {analgesico}, {p_anticonceptivo}, {clues}, {procile})"
+            query = f"INSERT INTO hechos VALUES ({f_ingreso}, {edo_civil}, {edad}, {derecho_hab}, {nivel_edu}, {ocupa}, {relig}, {paren}, {entidad}, {municipio}, {menarca}, {f_sexual}, {gesta}, {n_aborto}, {n_partos}, {n_cesarea}, {consejeria}, {anticonceptivo}, {c_num}, {motivo}, {sem_gesta}, {p_concent}, {complica}, {dolor}, {analgesico}, {p_anticonceptivo}, {clues}, {procile})"
             print(query)
 
             id_fecha = id_fecha_tmp
