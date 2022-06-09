@@ -283,24 +283,6 @@ insert into anticonceptivoPost values('INYECCION + PARCHE')
 insert into anticonceptivoPost values('DIU + PARCHE')
 insert into anticonceptivoPost values('INYECCION')
 
-create table complicaciones(
-    id int not null IDENTITY,
-    descripcion varchar(2) not null,
-    primary key(id)
-)
-// cambiar na = no
-insert into complicaciones values('SI');
-insert into complicaciones values('NO');
-
-create table dolor(
-    id int not null IDENTITY,
-    descripcion varchar(2) not null,
-    primary key(id)
-)
-// cambiar na = no
-insert into dolor values('SI');
-insert into dolor values('NO');
-
 create table resultadoILE(
     id int not null IDENTITY,
     descripcion varchar(15) not null,
@@ -392,3 +374,11 @@ insert into informacionCLUES values(14, 'TLAHUAC', 'HOSPITALIZACION', 'TLAHUAC C
 insert into informacionCLUES values(15, 'ALVARO OBREGON', 'HOSPITALIZACION', 'PROLONGACION 5 DE MAYO', 'EXHACIENDA TARANGO', '01618', 19.3618836, -99.2240659, 1)
 insert into informacionCLUES values(16, 'TLAHUAC', 'CONSULTA EXTERNA', 'FIDELIO', 'MIGUEL HIDALGO', '13200', 19.2905, -99.0478, 1)
 insert into informacionCLUES values(17, 'LA MAGDALENA CONTRERAS', 'CONSULTA EXTERNA', 'OJO DE AGUA', 'HUAYATLA', '10360', 19.312301	-99.2601498, 1)
+
+create table respuestaBinaria(
+    id int not null IDENTITY,
+    descripcion varchar(2) not null
+)
+
+insert into table respuestaBinaria values("SI");
+insert into table respuestaBinaria values("NO");
