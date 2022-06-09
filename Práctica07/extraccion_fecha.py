@@ -221,6 +221,7 @@ edades = {}
     
 fechas = {}
 
+edos_civiles = {}
 
 edad = 0
 menarca = 0
@@ -239,6 +240,10 @@ c_fecha = 0
 fecha_cierre = 0
 nile = 0
 
+nth_row = 1
+
+id_edo_civil = 0
+
 with open('datosNuevos.csv', newline='') as File:  
     reader = csv.reader(File)
     first = True
@@ -247,6 +252,8 @@ with open('datosNuevos.csv', newline='') as File:
     id_edad = 0
     id_cantidades = 0
     for row in reader:
+        print(nth_row)
+        nth_row+= 1
         if not first:
             #FECHA
             anio = int(row[0])
@@ -279,7 +286,7 @@ with open('datosNuevos.csv', newline='') as File:
             
             edad = id_edad
             
-            menarca = int(row[12])
+            menarca = int(float(row[12]))
             if menarca not in edades:
                 edades[menarca] = id_edad
                 query = f"INSERT INTO edades VALUES ({menarca})"
@@ -291,7 +298,12 @@ with open('datosNuevos.csv', newline='') as File:
             
             menarca = id_edad
             
-            f_sexual = int(row[13])
+            f_sexual = row[13]
+            if f_sexual != 'NA':
+                f_sexual = int(f_sexual)
+            else:
+                f_sexual = 0
+
             if f_sexual not in edades:
                 edades[f_sexual] = id_edad
                 query = f"INSERT INTO edades VALUES ({f_sexual})"
@@ -303,7 +315,12 @@ with open('datosNuevos.csv', newline='') as File:
             
             f_sexual = id_edad
 
-            n_hijos = int(row[14])
+            n_hijos = row[14]
+            if n_hijos != 'NA':
+                n_hijos = int(n_hijos)
+            else:
+                n_hijos = 0
+
             if n_hijos not in cantidades:
                 cantidades[n_hijos] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({n_hijos})"
@@ -399,6 +416,29 @@ with open('datosNuevos.csv', newline='') as File:
             
             sem_gesta = id_cantidades
 
+
+            #PREGUNTAR QUEPEZ
+            '''
+            edo_civil = row(3)
+            if edo_civil not in edo_civil_id:
+                edo_civil_id[id_edo_civil]
+                query = f"INSERT INTO edoCivil VALUES ('{edo_civil}')"
+                id_edo_civil += 1
+                id_edo_civil_tmp = id_edo_civil
+            else:
+                id_edo_civil_tmp = id_edo_civil
+                id_edo_civil = edo_civil_id[]
+            '''
+
+            edo_civil = row(3)
+            if edo_civil not in edos_civiles:
+                edos_civiles[edo_civil] = id_edo_civil
+                query = f"INSERT INTO edoCivil VALUES ('{edo_civil}')"
+                id_edo_civil += 1
+                id_edo_civil_tmp = id_edo_civil
+            else:
+                id_edo_civil_tmp = id_edo_civil
+                id_edo_civil = edos_civiles[edo_civil]
 
             id_fecha = id_fecha_tmp
             id_edad = id_edad_tmp
