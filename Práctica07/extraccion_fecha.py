@@ -6,13 +6,13 @@ from email.policy import default
 
 #Días de la semana
 dias = {
-    'Monday': 'Lunes',
-    'Tuesday': 'Martes',
-    'Wednesday': 'Miercoles',
-    'Thursday': 'Jueves',
-    'Friday': 'Viernes',
-    'Saturday': 'Sabado',
-    'Sunday': 'Domingo'
+    'Monday': 'LUNES',
+    'Tuesday': 'MARTES',
+    'Wednesday': 'MIERCOLES',
+    'Thursday': 'JUEVES',
+    'Friday': 'VIERNES',
+    'Saturday': 'SABADO',
+    'Sunday': 'DOMINGO'
 }
 
 estado_civil = {
@@ -87,16 +87,16 @@ estado_residencia = {
     'CHIAPAS' : 2,
     'TABASCO' : 3,
     'BAJA CALIFORNIA' : 4,
-    'NUEVO LEÓN' : 5,
+    'NUEVO LEON' : 5,
     'HIDALGO' : 6,
     'ZACATECAS' : 7, 
-    'SAN LUIS POTOSÍ' : 8,
+    'SAN LUIS POTOSI' : 8,
     'TAMAULIPAS' : 9,
-    'CIUDAD DE MÉXICO' : 10,
+    'CIUDAD DE MEXICO' : 10,
     'AGUASCALIENTES' : 11,
     'TLAXCALA' : 12,
     'GUERRERO' : 13, 
-    'MICHOACÁN' : 14,
+    'MICHOACAN' : 14,
     'PUEBLA' : 15,
     'NAYARIT' : 16,
     'SINALOA' : 17,
@@ -110,11 +110,11 @@ estado_residencia = {
     'CAMPECHE' : 25,
     'COAHUILA' : 26,
     'GUANAJUATO' : 27,
-    'YUCATÁN' : 28,
+    'YUCATAN' : 28,
     'QUERÉTARO' : 29,
     'COLIMA' : 30,
     'BAJA CALIFORNIA SUR' : 31, 
-    'ESTADO DE MÉXICO' : 32
+    'ESTADO DE MEXICO' : 32
 }
 
 ile_previo = {
@@ -416,29 +416,8 @@ with open('datosNuevos.csv', newline='') as File:
             
             sem_gesta = id_cantidades
 
+            
 
-            #PREGUNTAR QUEPEZ
-            '''
-            edo_civil = row(3)
-            if edo_civil not in edo_civil_id:
-                edo_civil_id[id_edo_civil]
-                query = f"INSERT INTO edoCivil VALUES ('{edo_civil}')"
-                id_edo_civil += 1
-                id_edo_civil_tmp = id_edo_civil
-            else:
-                id_edo_civil_tmp = id_edo_civil
-                id_edo_civil = edo_civil_id[]
-            '''
-
-            edo_civil = row(3)
-            if edo_civil not in edos_civiles:
-                edos_civiles[edo_civil] = id_edo_civil
-                query = f"INSERT INTO edoCivil VALUES ('{edo_civil}')"
-                id_edo_civil += 1
-                id_edo_civil_tmp = id_edo_civil
-            else:
-                id_edo_civil_tmp = id_edo_civil
-                id_edo_civil = edos_civiles[edo_civil]
 
             id_fecha = id_fecha_tmp
             id_edad = id_edad_tmp

@@ -138,16 +138,16 @@ INSERT INTO estadoResidencia VALUES("CHIHUAHUA");
 INSERT INTO estadoResidencia VALUES("CHIAPAS");
 INSERT INTO estadoResidencia VALUES("TABASCO");
 INSERT INTO estadoResidencia VALUES("BAJA CALIFORNIA");
-INSERT INTO estadoResidencia VALUES("NUEVO LEÓN");
+INSERT INTO estadoResidencia VALUES("NUEVO LEON");
 INSERT INTO estadoResidencia VALUES("HIDALGO");
 INSERT INTO estadoResidencia VALUES("ZACATECAS");
-INSERT INTO estadoResidencia VALUES("SAN LUIS POTOSÍ");
+INSERT INTO estadoResidencia VALUES("SAN LUIS POTOSI");
 INSERT INTO estadoResidencia VALUES("TAMAULIPAS");
-INSERT INTO estadoResidencia VALUES("CIUDAD DE MÉXICO");
+INSERT INTO estadoResidencia VALUES("CIUDAD DE MEXICO");
 INSERT INTO estadoResidencia VALUES("AGUASCALIENTES");
 INSERT INTO estadoResidencia VALUES("TLAXCALA");
 INSERT INTO estadoResidencia VALUES("GUERRERO");
-INSERT INTO estadoResidencia VALUES("MICHOACÁN");
+INSERT INTO estadoResidencia VALUES("MICHOACAN");
 INSERT INTO estadoResidencia VALUES("PUEBLA");
 INSERT INTO estadoResidencia VALUES("NAYARIT");
 INSERT INTO estadoResidencia VALUES("SINALOA");
@@ -162,10 +162,10 @@ INSERT INTO estadoResidencia VALUES("CAMPECHE");
 INSERT INTO estadoResidencia VALUES("COAHUILA");
 INSERT INTO estadoResidencia VALUES("GUANAJUATO");
 INSERT INTO estadoResidencia VALUES("YUCATÁN");
-INSERT INTO estadoResidencia VALUES("QUERÉTARO");
+INSERT INTO estadoResidencia VALUES("QUERETARO");
 INSERT INTO estadoResidencia VALUES("COLIMA");
 INSERT INTO estadoResidencia VALUES("BAJA CALIFORNIA SUR");
-INSERT INTO estadoResidencia VALUES("ESTADO DE MÉXICO");
+INSERT INTO estadoResidencia VALUES("ESTADO DE MEXICO");
 
 
 //Se genera con script
