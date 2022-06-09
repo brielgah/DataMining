@@ -27,6 +27,7 @@ estado_civil = {
 
 derecho_habiente = {
     'IMSS' : 1,
+    'ISSSTE' : 2,
     'ISSTE' : 2,
     'SEGURO POPULAR' : 3,
     'NO ESPECIFICADO' : 4,
@@ -41,13 +42,15 @@ educacion = {
     'MAESTRIA' : 5,
     'DOCTORADO' : 6,
     'SIN ACCESO A LA EDUCACION FORMAL' : 7,
-    'TRABAJADORA DEL HOGAR NO REMUNERADA' : 8,
-    'EMPLEADA' : 9,
-    'NO ESPECIFICADO' : 10,
-    'DESEMPLEADA' : 11,
-    'ESTUDIANTE' : 12
 }
 
+ocupacion = {
+    'TRABAJADORA DEL HOGAR NO REMUNERADA' : 1,
+    'EMPLEADA' : 2,
+    'NO ESPECIFICADO' : 3,
+    'DESEMPLEADA' : 4,
+    'ESTUDIANTE' : 5
+}
 
 religion = {
     'MORMONA' : 1,
@@ -111,7 +114,7 @@ estado_residencia = {
     'COAHUILA' : 26,
     'GUANAJUATO' : 27,
     'YUCATAN' : 28,
-    'QUERÉTARO' : 29,
+    'QUERETARO' : 29,
     'COLIMA' : 30,
     'BAJA CALIFORNIA SUR' : 31, 
     'ESTADO DE MEXICO' : 32
@@ -130,7 +133,7 @@ ile_previo = {
     9 : 10
 }
 
-anticonceptivo = {
+anticonceptivos = {
     'NINGUNO' : 1,
     'ANILLO VAGINAL' : 2,
     'INYECCION + DIU' : 3,
@@ -210,10 +213,30 @@ cluesHospital = {
 }
 
 procedimiento_ILE = {
-    'ASPIRACIÓN ENDOUTERINA (MANUAL O ELÉCTRICA)' : 1,
+    'ASPIRACION ENDOUTERINA (MANUAL O ELECTRICA)' : 1,
     'LEGRADO' : 2,
     'MEDICAMENTO' : 3
 }
+
+respuestas_binarias = {
+    'SI' : 1,
+    'NO' : 2,
+    'NA' : 3
+}
+
+motivos = {
+    'SITUACION ECONOMICA' : 1,
+    'INTERRUPCION VOLUNTARIA' : 2,
+    'FALLA DEL METODO' : 3,
+    'SIN APOYO' : 4,
+    'OTRA' : 5,
+    'DECISIONES VINCULADAS CON LA PAREJA' : 6,
+    'PROBLEMAS DE SALUD' : 7,
+    'PROYECTO DE VIDA' : 8, 
+    'VIOLACION' : 9
+}
+
+municipios = {}
 
 cantidades = {}
 
@@ -244,15 +267,15 @@ nth_row = 1
 
 id_edo_civil = 0
 
-with open('datosNuevos.csv', newline='') as File:  
+with open('datosNuevos2.csv', newline='') as File:  
     reader = csv.reader(File)
     first = True
     cnt = 0
-    id_fecha = 0
-    id_edad = 0
-    id_cantidades = 0
+    id_fecha = 2
+    id_edad = 1
+    id_cantidades = 1
+    id_municipios = 1
     for row in reader:
-        print(nth_row)
         nth_row+= 1
         if not first:
             #FECHA
@@ -267,17 +290,20 @@ with open('datosNuevos.csv', newline='') as File:
             if fecha not in fechas:
                 fechas[fecha] = id_fecha
                 query = f"INSERT INTO fecha VALUES ('{fecha}', {anio}, {mes}, {dia}, '{dias[dia_semana]}')"
-                #print(query)
+                print(query)
                 id_fecha += 1
                 id_fecha_tmp = id_fecha
             else:
                 id_fecha_tmp = id_fecha 
                 id_fecha = fechas[fecha]
             
+            fecha = id_fecha
+
             edad = int(row[4])
             if edad not in edades:
                 edades[edad] = id_edad
                 query = f"INSERT INTO edades VALUES ({edad})"
+                print(query)
                 id_edad += 1
                 id_edad_tmp = id_edad
             else:
@@ -290,6 +316,7 @@ with open('datosNuevos.csv', newline='') as File:
             if menarca not in edades:
                 edades[menarca] = id_edad
                 query = f"INSERT INTO edades VALUES ({menarca})"
+                print(query)
                 id_edad += 1
                 id_edad_tmp = id_edad
             else:
@@ -307,6 +334,7 @@ with open('datosNuevos.csv', newline='') as File:
             if f_sexual not in edades:
                 edades[f_sexual] = id_edad
                 query = f"INSERT INTO edades VALUES ({f_sexual})"
+                print(query)
                 id_edad += 1
                 id_edad_tmp = id_edad
             else:
@@ -324,6 +352,7 @@ with open('datosNuevos.csv', newline='') as File:
             if n_hijos not in cantidades:
                 cantidades[n_hijos] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({n_hijos})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -336,6 +365,7 @@ with open('datosNuevos.csv', newline='') as File:
             if gesta not in cantidades:
                 cantidades[gesta] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({gesta})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -348,6 +378,7 @@ with open('datosNuevos.csv', newline='') as File:
             if n_aborto not in cantidades:
                 cantidades[n_aborto] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({n_aborto})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -360,6 +391,7 @@ with open('datosNuevos.csv', newline='') as File:
             if n_partos not in cantidades:
                 cantidades[n_partos] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({n_partos})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -372,6 +404,7 @@ with open('datosNuevos.csv', newline='') as File:
             if n_cesarea not in cantidades:
                 cantidades[n_cesarea] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({n_cesarea})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -384,6 +417,7 @@ with open('datosNuevos.csv', newline='') as File:
             if nile not in cantidades:
                 cantidades[nile] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({nile})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -396,6 +430,7 @@ with open('datosNuevos.csv', newline='') as File:
             if c_num not in cantidades:
                 cantidades[c_num] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({c_num})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -408,6 +443,7 @@ with open('datosNuevos.csv', newline='') as File:
             if sem_gesta not in cantidades:
                 cantidades[sem_gesta] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({sem_gesta})"
+                print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
             else:
@@ -416,12 +452,46 @@ with open('datosNuevos.csv', newline='') as File:
             
             sem_gesta = id_cantidades
 
-            
 
+            
+            municipio = row[11]
+            if municipio not in municipios:
+                municipios[municipio] = id_municipios
+                query = f"INSERT INTO municipioResidencia VALUES ('{municipio}')"
+                print(query)
+                id_municipios += 1
+                id_municipios_tmp = id_municipios
+            else:
+                id_municipios_tmp = id_municipios
+                id_municipios = municipios[municipio]
+            
+            municipio = id_municipios
+
+            f_ingreso = fecha 
+            edo_civil = estado_civil[row[3]]
+            derecho_hab = derecho_habiente[row[5]]
+            nivel_edu = educacion[row[6]]
+            ocupa = ocupacion[row[7]]
+            relig = religion[row[8]]
+            paren = paretesco[row[9]]
+            entidad = estado_residencia[row[10]]
+            consejeria = respuestas_binarias[row[20]]
+            anticonceptivo = anticonceptivos[row[21]]
+            motivo = motivos[row[24]]
+            p_concent = respuestas_binarias[row[28]]
+            complica = respuestas_binarias[row[29]]
+            dolor = respuestas_binarias[row[30]]
+            analgesico = respuestas_binarias[row[31]]
+            p_anticonceptivo = anticonceptivo_post[row[32]]
+            clues = cluesHospital[row[35]]
+            procile = procedimiento_ILE[row[36]]
+
+            query = f"INSERT INTO hechos VALUES ({f_ingreso}, {edo_civil}, {edad}, {derecho_hab}, {nivel_edu}, {ocupa}, {relig}, {paren}, {entidad}, {municipio}, {menarca}, {f_sexual}, {gesta}, {n_aborto}, {n_partos}, {n_cesarea}, {consejeria}, {anticonceptivo}, {c_num}, {motivo}, {p_sem_gest}, {p_concent}, {complica}, {dolor}, {analgesico}, {p_anticonceptivo}, {clues}, {procile})"
+            print(query)
 
             id_fecha = id_fecha_tmp
             id_edad = id_edad_tmp
             id_cantidades = id_cantidades_tmp
+            id_municipios = id_municipios_tmp
 
         first = False
-    print(cnt)
