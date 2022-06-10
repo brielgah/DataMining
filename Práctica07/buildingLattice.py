@@ -1,11 +1,12 @@
+
 # A Python program to print all
 # combinations of a given length
 from itertools import combinations
 
-dimensions = ['fechaID','edoCivilId','edadId', 'derechoHabienteId', 'educacionId', 'ocupacionId', 'religionId', 'parentescoId', 'estadoResidenciaId', 'municipioResidenciaId', 'menstuacionId', 'edadSexualId', 'semanasGestacionId', 'numeroAbortosId', 'numeroPartosId', 'numeroCesareaId']
+dimensions = ['fechaId','edoCivilId','edadId', 'educacionId', 'ocupacionId', 'religionId', 'parentescoId', 'estadoResidenciaId', 'municipioResidenciaId', 'menstuacionId', 'edadSexualId', 'numeroAbortosId', 'numeroPartosId', 'anticonceptivoId', 'complicacionId','anticonceptivoPostId', 'cluesId', 'procileId', 'ilePreviosId']
 
-table = "ingresosMetro"
-measure = 'AVG(ingreso)'
+table = "hechos"
+measure = 'COUNT(*)'
 
 for i in range(1,len(dimensions)+1):
     allCombinations = combinations(dimensions, i)

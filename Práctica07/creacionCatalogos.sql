@@ -276,14 +276,14 @@ insert into anticonceptivoPost values('INYECCION + PARCHE')
 insert into anticonceptivoPost values('DIU + PARCHE')
 insert into anticonceptivoPost values('INYECCION')
 
-create table resultadoILE(
+/* create table resultadoILE(
     id int not null IDENTITY,
     descripcion varchar(15) not null,
     primary key(id)
 );
 --- tiene NA
 insert into resultadoILE values('COMPLETO');
-insert into resultadoILE values('OTRO');
+insert into resultadoILE values('OTRO'); */
 
 create table CLUESHospital(
     id int not null IDENTITY,
@@ -407,6 +407,7 @@ create table hechos(
     anticonceptivoPostId int not null,
     cluesId int not null,
     procileId int not null,
+    ilePreviosId int not null,
     foreign key(fechaId) references fecha(id),
     foreign key(edadId) references edades(id),
     foreign key(edoCivilId) references edoCivil(id),
@@ -433,5 +434,8 @@ create table hechos(
     foreign key(analgesicoId) references respuestaBinaria(id),
     foreign key(anticonceptivoPostId) references anticonceptivoPost(id),
     foreign key(cluesId) references CLUESHospital(id),
-    foreign key(procileId) references procedimientoILE(id)
+    foreign key(procileId) references procedimientoILE(id),
+    foreign key(religionId) references religion(id),
+    foreign key(ocupacionId) references ocupacion(id),
+    foreign key(ilePreviosId) references ILEPrevios(id)
 )

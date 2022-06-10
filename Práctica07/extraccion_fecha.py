@@ -413,8 +413,8 @@ with open('datosNuevos2.csv', newline='') as File:
             
             n_cesarea = cantidades[n_cesarea]
 
-            nile = int(row[19])
-            if nile not in cantidades:
+            nile = ile_previo[int(row[19])]
+            """ if nile not in cantidades:
                 cantidades[nile] = id_cantidades
                 query = f"INSERT INTO cantidades VALUES ({nile})"
                 print(query)
@@ -424,7 +424,7 @@ with open('datosNuevos2.csv', newline='') as File:
                 id_cantidades_tmp = id_cantidades
                 id_cantidades = cantidades[nile]
             
-            nile = cantidades[nile]
+            nile = cantidades[nile] """
 
             c_num = int(row[23])
             if c_num not in cantidades:
@@ -486,7 +486,7 @@ with open('datosNuevos2.csv', newline='') as File:
             clues = cluesHospital[row[35]]
             procile = procedimiento_ILE[row[36]]
 
-            query = f"INSERT INTO hechos VALUES ({f_ingreso}, {edo_civil}, {edad}, {derecho_hab}, {nivel_edu}, {ocupa}, {relig}, {paren}, {entidad}, {municipio}, {menarca}, {f_sexual}, {gesta}, {n_aborto}, {n_partos}, {n_cesarea}, {consejeria}, {anticonceptivo}, {c_num}, {motivo}, {sem_gesta}, {p_concent}, {complica}, {dolor}, {analgesico}, {p_anticonceptivo}, {clues}, {procile})"
+            query = f"INSERT INTO hechos VALUES ({f_ingreso}, {edo_civil}, {edad}, {derecho_hab}, {nivel_edu}, {ocupa}, {relig}, {paren}, {entidad}, {municipio}, {menarca}, {f_sexual}, {gesta}, {n_aborto}, {n_partos}, {n_cesarea}, {consejeria}, {anticonceptivo}, {c_num}, {motivo}, {sem_gesta}, {p_concent}, {complica}, {dolor}, {analgesico}, {p_anticonceptivo}, {clues}, {procile},{nile})"
             print(query)
 
             id_fecha = id_fecha_tmp
