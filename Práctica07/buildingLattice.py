@@ -6,7 +6,7 @@ from itertools import combinations
 dimensions = ['fechaId','edoCivilId','edadId', 'educacionId', 'ocupacionId', 'religionId', 'parentescoId', 'estadoResidenciaId', 'municipioResidenciaId', 'menstuacionId', 'edadSexualId', 'numeroAbortosId', 'numeroPartosId', 'anticonceptivoId', 'complicacionId','anticonceptivoPostId', 'cluesId', 'procileId', 'ilePreviosId']
 
 table = "hechos"
-measure = 'COUNT(*)'
+measure = 'COUNT(*) as cantidad'
 
 for i in range(1,len(dimensions)+1):
     allCombinations = combinations(dimensions, i)
@@ -18,4 +18,4 @@ for i in range(1,len(dimensions)+1):
             combQuery+=item
             combQuery+=','
         combQueryTemp = combQuery[0:len(combQuery)-1]
-        print(f"SELECT {measure},{combQueryTemp} from {table} group by {combQueryTemp};")
+        print(f"SELECT {measure},{combQueryTemp} from {table} group by {combQueryTemp} order by cantidad;")

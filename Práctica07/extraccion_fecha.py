@@ -306,9 +306,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_edad += 1
                 id_edad_tmp = id_edad
-            else:
+            """ else:
                 id_edad_tmp = id_edad
-                id_edad = edades[edad]
+                id_edad = edades[edad] """
             
             edad = edades[edad]
             
@@ -319,9 +319,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_edad += 1
                 id_edad_tmp = id_edad
-            else:
+            """ else:
                 id_edad_tmp = id_edad
-                id_edad = edades[menarca]
+                id_edad = edades[menarca] """
             
             menarca = edades[menarca]
             
@@ -337,9 +337,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_edad += 1
                 id_edad_tmp = id_edad
-            else:
+            """ else:
                 id_edad_tmp = id_edad
-                id_edad = edades[f_sexual]
+                id_edad = edades[f_sexual] """
             
             f_sexual = edades[f_sexual]
 
@@ -355,9 +355,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[n_hijos]
+                id_cantidades = cantidades[n_hijos] """
             
             n_hijos = cantidades[n_hijos]
 
@@ -368,9 +368,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[gesta]
+                id_cantidades = cantidades[gesta] """
             
             gesta =  cantidades[gesta]
 
@@ -381,9 +381,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[n_aborto]
+                id_cantidades = cantidades[n_aborto] """
             
             n_aborto = cantidades[n_aborto]
 
@@ -394,9 +394,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[n_partos]
+                id_cantidades = cantidades[n_partos] """
             
             n_partos = cantidades[n_partos]
 
@@ -407,9 +407,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[n_cesarea]
+                id_cantidades = cantidades[n_cesarea] """
             
             n_cesarea = cantidades[n_cesarea]
 
@@ -433,9 +433,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[c_num]
+                id_cantidades = cantidades[c_num] """
             
             c_num = cantidades[c_num]
 
@@ -446,9 +446,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_cantidades += 1
                 id_cantidades_tmp = id_cantidades
-            else:
+            """ else:
                 id_cantidades_tmp = id_cantidades
-                id_cantidades = cantidades[sem_gesta]
+                id_cantidades = cantidades[sem_gesta] """
             
             sem_gesta = cantidades[sem_gesta]
 
@@ -461,9 +461,9 @@ with open('datosNuevos2.csv', newline='') as File:
                 print(query)
                 id_municipios += 1
                 id_municipios_tmp = id_municipios
-            else:
+            """ else:
                 id_municipios_tmp = id_municipios
-                id_municipios = municipios[municipio]
+                id_municipios = municipios[municipio] """
             
             municipio = municipios[municipio]
 
