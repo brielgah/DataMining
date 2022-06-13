@@ -1,0 +1,1 @@
+SELECT COUNT(*) as cantidad,edad,descripcion as estado,alcaldia from hechos inner join informacionCLUES A on cluesId = A.id inner join estadoResidencia B on estadoResidenciaId = B.id inner join edades C on edadId = C.id group by edad,descripcion,alcaldia;
